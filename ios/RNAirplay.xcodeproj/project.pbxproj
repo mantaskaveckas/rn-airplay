@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNAirplay.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNAirplay.m */; };
+		AB689E472310025C00D5A9D5 /* RNAirplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB689E462310025C00D5A9D5 /* RNAirplay.swift */; };
+		AB689E4B231004B700D5A9D5 /* RNAirplayBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AB689E4A231004B700D5A9D5 /* RNAirplayBridge.m */; };
+		AB689E4D2310062400D5A9D5 /* RNAirplayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB689E4C2310062400D5A9D5 /* RNAirplayButton.swift */; };
+		AB689E4F2310064800D5A9D5 /* RNAirplayButtonBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AB689E4E2310064800D5A9D5 /* RNAirplayButtonBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +27,11 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNAirplay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNAirplay.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RNAirplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNAirplay.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RNAirplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNAirplay.m; sourceTree = "<group>"; };
+		AB689E452310025C00D5A9D5 /* RNAirplay-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNAirplay-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB689E462310025C00D5A9D5 /* RNAirplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNAirplay.swift; sourceTree = "<group>"; };
+		AB689E4A231004B700D5A9D5 /* RNAirplayBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAirplayBridge.m; sourceTree = "<group>"; };
+		AB689E4C2310062400D5A9D5 /* RNAirplayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNAirplayButton.swift; sourceTree = "<group>"; };
+		AB689E4E2310064800D5A9D5 /* RNAirplayButtonBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAirplayButtonBridge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,9 +56,12 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				B3E7B5881CC2AC0600A0062D /* RNAirplay.h */,
-				B3E7B5891CC2AC0600A0062D /* RNAirplay.m */,
+				AB689E4E2310064800D5A9D5 /* RNAirplayButtonBridge.m */,
+				AB689E4A231004B700D5A9D5 /* RNAirplayBridge.m */,
+				AB689E462310025C00D5A9D5 /* RNAirplay.swift */,
+				AB689E4C2310062400D5A9D5 /* RNAirplayButton.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				AB689E452310025C00D5A9D5 /* RNAirplay-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +96,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -95,6 +105,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -112,7 +123,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E7B58A1CC2AC0600A0062D /* RNAirplay.m in Sources */,
+				AB689E472310025C00D5A9D5 /* RNAirplay.swift in Sources */,
+				AB689E4F2310064800D5A9D5 /* RNAirplayButtonBridge.m in Sources */,
+				AB689E4D2310062400D5A9D5 /* RNAirplayButton.swift in Sources */,
+				AB689E4B231004B700D5A9D5 /* RNAirplayBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,32 +217,41 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../../../React/**",
-					"$(SRCROOT)/../../react-native/React/**",
-				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RNAirplay;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		58B511F11A9E6C8500147676 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNAirplay;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNAirplay-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		58B511F11A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNAirplay;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNAirplay-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
