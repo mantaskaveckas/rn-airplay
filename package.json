@@ -1,4 +1,3 @@
-
 {
   "name": "rn-airplay",
   "version": "1.0.0",
@@ -8,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "airplay"
   ],
-  "author": "",
+  "author": "Mantas Kaveckas",
   "license": "",
   "peerDependencies": {
     "react-native": "^0.41.2"
