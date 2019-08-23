@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/mantaskaveckas/rn-airplay"
   s.license      = "MIT"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "../LICENCE" }
   s.author             = { "author" => "mantas.kaveckas@gmail.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/mantaskaveckas/rn-airplay.git", :tag => "master" }
