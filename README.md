@@ -1,30 +1,62 @@
-
 # rn-airplay
 
 ## Getting started
 
-`$ npm install rn-airplay --save`
+`$ yarn add rn-airplay`
 
 ### Mostly automatic installation
 
-`$ react-native link rn-airplay`
+`$ cd ios && pod install`
 
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `rn-airplay` and add `RNAirplay.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNAirplay.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
+Make sure to have Swift support on your Objective-C project.
 
 ## Usage
-```javascript
-import RNAirplay from 'rn-airplay';
 
-// TODO: What to do with the module?
-RNAirplay;
+```javascript
+import React from "react";
+import { View, Text } from "react-native";
+import { Airplay, AirplayButton, AirplayListener } from "rn-airplay";
+
+class Component extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      airplayConnected: false,
+      airplayAvailable: false
+    };
+  }
+
+  componentDidMount() {
+    this.airplayConnected = AirplayListener.addListener(
+      "airplayConnected",
+      devices => this.setState({ airplayConnected: devices.connected })
+    );
+
+    this.airplayAvailable = AirplayListener.addListener(
+      "airplayAvailable",
+      devices => this.setState({ airplayAvailable: devices.available })
+    );
+
+    Airplay.startScan();
+  }
+
+  componentWillUnmount() {
+    Airplay.endScan();
+
+    this.airplayConnected.remove();
+    this.airplayAvailable.remove();
+  }
+
+  render() {
+    const { airplayConnected, airplayAvailable } = this.state;
+
+    return (
+      <View>
+        {airplayConnected && <Text>Airplay connected</Text>}
+        {airplayAvailable && <Text>Airplay available</Text>}
+        <AirplayButton />
+      </View>
+    );
+  }
+}
 ```
-  
