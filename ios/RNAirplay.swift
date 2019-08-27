@@ -33,8 +33,8 @@ class RNAirplay: RCTEventEmitter {
     }
     
     @objc func isConnected() -> Void {
-        let currentRoute = AVAudioSession.sharedInstance().currentRoute
         var isConnected = false
+        let currentRoute = AVAudioSession.sharedInstance().currentRoute
         for output in currentRoute.outputs {
             if output.portType == AVAudioSession.Port.airPlay {
                 isConnected = true
@@ -43,8 +43,19 @@ class RNAirplay: RCTEventEmitter {
         }
         self.sendEvent(withName: "airplayConnected", body: ["connected": isConnected])
     }
+
+    @objc func isAvailable() -> Void {
+        var isAvailable = false
+        let currentRoute = AVAudioSession.sharedInstance().currentRoute
+        let routeCount = currentRoute.outputs.count
+        let isSpeaker = currentRoute.outputs[0].portName == "Speaker"
+        if (routeCount > 0 && !isSpeaker) {
+            isAvailable = true
+        }
+        self.sendEvent(withName: "airplayAvailable", body: ["available": isAvailable])
+    }
     
     override func supportedEvents() -> [String]! {
-        return ["airplayConnected"]
+        return ["airplayConnected", "airplayAvailable"]
     }
 }
