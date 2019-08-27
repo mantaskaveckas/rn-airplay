@@ -10,9 +10,10 @@ Pod::Spec.new do |s|
   s.homepage     = package['homepage']
   s.license      = package['license']
   s.author       = { "author" => package['author'] }
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/mantaskaveckas/rn-airplay.git", :tag => "v#{s.version}" }
-  s.source_files  = "ios/**/*.{h,m}"
+  s.source_files  = "ios/**/*.{swift,h,m}"
+  s.requires_arc = true
 
   s.dependency "React"
 
