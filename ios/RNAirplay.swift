@@ -22,6 +22,7 @@ class RNAirplay: RCTEventEmitter {
             object: AVAudioSession.sharedInstance()
         )
         self.isConnected()
+        self.isAvailable()
     }
     
     @objc func endScan() -> Void {
