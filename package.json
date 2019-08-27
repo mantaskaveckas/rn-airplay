@@ -1,6 +1,6 @@
 {
   "name": "rn-airplay",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "React Native Airplay component for iOS",
   "homepage": "https://github.com/mantaskaveckas/rn-airplay",
   "main": "index.js",
