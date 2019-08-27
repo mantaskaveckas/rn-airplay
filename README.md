@@ -1,5 +1,7 @@
 # rn-airplay
 
+Module is based on few already existing projects, it has few additional feature tho and works fine with RN 0.60 and higher.
+
 ## Getting started
 
 `$ yarn add rn-airplay`
