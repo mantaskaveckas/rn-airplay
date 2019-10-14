@@ -1,5 +1,7 @@
 # rn-airplay
 
+![Airplay](https://i.ytimg.com/vi/L1Ee0bOCej8/maxresdefault.jpg)
+
 Module is based on few already existing projects, it has few additional features tho and works fine with RN 0.60 and higher.
 
 ## Getting started
