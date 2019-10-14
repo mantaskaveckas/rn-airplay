@@ -1,6 +1,6 @@
-# rn-airplay
+# React Native Airplay
 
-![Airplay](https://i.ytimg.com/vi/L1Ee0bOCej8/maxresdefault.jpg)
+![Airplay](https://i0.wp.com/teachmeios.com/wp-content/uploads/2014/02/AirPlay-Logo-with-Text.png)
 
 Module is based on few already existing projects, it has few additional features tho and works fine with RN 0.60 and higher.
 
